@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  overflow-x: hidden;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #161d6f;
+  color: whitesmoke;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  width: 100%;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 20px;
+  background-color: whitesmoke;
+}
+
+nav .navlinks {
+  margin-left: 20px;
+  font-family: "Roboto", sans-serif;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+nav .navlinks a {
+  text-decoration: none;
+  color: #0f1123;
+}
+
+.content-box {
+  font-family: "Roboto", sans-serif;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.content-box .heading {
+  font-size: 3.125rem;
+  font-weight: 800;
+}
+
+.content-box .content {
+  font-size: 1.25rem;
+}
+
+.title-content {
+  font-size: 5.625rem;
+  position: absolute;
+  font-weight: 900;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: 'Fascinate',cursive;
+}
+
+.title-content .button {
+  font-size: 30px;
+  overflow: hidden;
+  height: 100px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.title-content .button a {
+  text-decoration: none;
+  color: white;
+  background-color: #F93737;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 0px #DFDFDF;
+          box-shadow: 10px 10px 0px #DFDFDF;
+}
+
+.game-body {
+  width: 100%;
+}
+
+.game-body .question {
+  height: 40vh;
+  font-size: 60px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.game-body .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.game-body .options .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.game-body .options .buttons .section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.game-body .options .buttons .but {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 30px;
+  -webkit-box-shadow: 10px 10px 0px #DFDFDF;
+          box-shadow: 10px 10px 0px #DFDFDF;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 50px;
+  width: 20%;
+  height: 60%;
+  min-height: 200px;
+  min-width: 200px;
+  margin-left: 50px;
+  background-color: cadetblue;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.game-body .options .buttons .but:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-box-shadow: 15px 15px 0px #DFDFDF;
+          box-shadow: 15px 15px 0px #DFDFDF;
+}
+
+.game-body .options .buttons .but .aline {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-left: 5px;
+  margin-right: 10px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.game-body .options .hangman {
+  width: 300px;
+  background-image: url("/scene(3).png");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  margin-left: 50px;
+  overflow-y: hidden;
+  border-top: 2px solid rgba(0, 0, 0, 0.151);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.game-body .options .water {
+  width: 100%;
+  height: 300px;
+  margin-top: 280px;
+  background-color: blue;
+}
+
+.game_over {
+  display: none;
+  background-color: blanchedalmond;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 120vh;
+  width: 100%;
+  z-index: 2;
+}
+
+.game_over lottie-player {
+  overflow: hidden;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 120vh;
+  width: 100%;
+}
+
+.game_over .text {
+  font-size: 40px;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.success {
+  height: 100vh;
+  width: 100%;
+  background-color: #38c172;
+  background-image: url("/scene(3).png");
+  background-position: center;
+  background-size: auto;
+}
+
+.success lottie-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.congreast {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  text-transform: capitalize;
+}
+
+@media (max-width: 1050px) {
+  .section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .section .but {
+    margin-top: 40px;
+  }
+  .buttons {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hangman {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.display {
+  display: block;
+}
+
+.answer {
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+}
+/*# sourceMappingURL=index.css.map */

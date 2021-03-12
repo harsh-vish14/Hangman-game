@@ -1,0 +1,111 @@
+<%- include('partials/header') %>
+<!-- <link rel="shortcut icon" href="pngtree-vector-video-game-icon-png-image_313030.png"> -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <div class="game_over">
+        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_hliaii.json" background="transparent"
+            speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+        <div class="text">
+            Game Over
+        </div>
+        <div class="answer">
+            correct answer:
+        </div>
+        <form action="/retry" method="post">
+            <div class="text" onclick="document.forms[0].submit()"
+                style="margin-top: 90px;background-color: white;padding-left: 20px;padding-right: 20px;cursor: pointer;">
+                RETRY
+            </div>
+        </form>
+
+
+    </div>
+    <div>
+        <div class="game-body">
+            <div class="question" style="text-transform: capitalize;">
+                <%= question %>
+            </div>
+            <form action="/" method="post">
+                <div class="options">
+                    <div class="buttons">
+                        <div class="section">
+                            <div class="but" style="background-color: #6930c3;color: white;">
+                                <div class="aline">
+                                    <%= One %>
+                                </div>
+                            </div>
+                            <div class="but" style="background-color: #FF4444;color: white;">
+                                <div class="aline">
+                                    <%= Two %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="but" style="background-color: #1176d4;color: white;">
+                                <div class="aline">
+                                    <%= Three %>
+                                </div>
+                            </div>
+                            <div class="but" style="background-color: #791111;color: white;">
+                                <div class="aline">
+                                    <%= Four %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hangman">
+                        <div class="water"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var correctAnswer = '<%= correctData %>'
+        var rise = 0
+        var wrong = 0
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        $(".but").click(function () {
+            if (rise == 180) {
+                wrong = 1   
+            }
+            var userChosen = $(this).text().trim();
+            console.log(userChosen)
+            if (userChosen == correctAnswer) {
+                sleep(1000).then(() => {
+                    window.location.replace("/game/next<%= currentindex %>")
+                })
+                $(this).css({ 'background-color' : 'green' });
+            }
+            else{
+                console.log("hi")
+
+                $(this).css(
+                    {
+                        opacity: '40%',
+                        cursor: 'not-allowed',
+                        transform: 'translateY(0px)'
+                    }
+                );
+                $('.hangman').css({
+                    filter: 'hue-rotate(224deg)'
+                })
+
+                $('.water').css({
+                    filter: 'hue-rotate(103deg)',
+                    margin: (180 - rise) + 'px 0px 0px 0px'
+                })
+                rise += 180
+                if (wrong == 1) {
+                    sleep(1000).then(() => {
+                        console.log('reload');
+                        $('.game_over').addClass('display');
+                    })
+                }
+            }
+        })
+        $('.answer').text('correct answer: ' + correctAnswer)
+    </script>
+    <%- include('partials/footer') %>

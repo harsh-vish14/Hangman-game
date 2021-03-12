@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+$mainfont:'Roboto',sans-serif;
+$textcolor: #0f1123;
+$navbackground: whitesmoke;
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+}
+html{
+    box-sizing: border-box;
+}
+
+footer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color:#161d6f;
+    color: whitesmoke;
+    font-family: $mainfont;
+    text-align: center;
+    width:100%;
+}
+nav{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    padding-right: 20px;
+    .navlinks{
+        margin-left: 20px;
+        font-family: $mainfont;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        a{
+            text-decoration: none;
+            color: $textcolor;
+        }   
+    }
+    background-color: $navbackground;
+}
+.content-box{
+    font-family: $mainfont;
+    margin-left: 50px;
+    margin-right: 50px;
+    .heading{
+        font-size: 3.125rem;
+        font-weight: 800;
+    }
+    .content{
+        font-size: 1.25rem;
+    }
+}
+
+.title-content{
+    font-size: 5.625rem;
+    position: absolute;
+    font-weight: 900;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Fascinate',cursive;
+
+    .button{
+        font-size: 30px;
+           overflow: hidden;
+           height: 100px;
+           margin-top: 5px;
+           text-align: center;
+        a{
+            // text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: #F93737;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 0px #DFDFDF;
+        }
+    }
+}
+
+.game-body{
+    // height: 100vh;
+    width: 100%;
+}
+.game-body{
+    .question {
+        height: 40vh;
+        font-size: 60px;
+        font-family: $mainfont;
+        text-align: center;
+        // background-color: blue;
+    }
+    .options{
+        // height: 60vh;
+        // background-color: blueviolet;
+        display: flex;
+        .buttons{
+            // width: 100%;
+            // background-color: brown;
+            display: flex;
+            .section{
+                display: flex;
+                // margin-left: auto;
+                // margin-right: auto;
+            }
+            .but{
+                font-size: 20px;
+                font-family: $mainfont;
+                text-align: center;
+                margin-top: 50px;
+                border-radius: 30px;
+                box-shadow: 10px 10px 0px #DFDFDF;
+                margin-left: 10px;
+                margin-right: 10px;
+                // margin-top: auto;
+                // margin-bottom: auto;
+                margin-bottom: 50px;
+                width: 20%;
+                height: 60%;
+                min-height: 200px;
+                min-width: 200px;
+                margin-left: 50px;
+                background-color: cadetblue;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+                &:hover{
+                    transform: translateY(-10px);
+                    box-shadow: 15px 15px 0px #DFDFDF;
+                }
+                .aline{
+                    position: relative;
+                    top: 50%;
+                    left: 50%;
+                    margin-left: 5px;
+                    margin-right: 10px;
+                    transform: translate(-50%,-50%);
+                }
+            }
+        }
+        .hangman{
+            
+            // background-color: $textcolor;
+            width: 300px;
+            background-image: url('/scene(3).png');
+            background-size: cover;
+            background-position: center;
+            // background-color: burlywood;
+            height: 300px;
+            margin-left: 50px;
+            // border-top-left-radius: -20px;
+            // border-top-right-radius: -20px;
+            overflow-y: hidden;
+            border-top: 2px solid rgba(0, 0, 0, 0.151);
+            border-left: 2px solid black;
+            border-right: 2px solid black;
+            border-bottom: 2px solid black;
+        }
+        .water{
+            width: 100%;
+            height: 300px;
+            margin-top: 280px;
+            background-color: blue;
+        }
+    }
+}
+
+// .next{
+//     cursor: pointer;
+//     transition: 0.3s ease-in-out;
+//     box-shadow: 4px 4px 0px #DFDFDF;
+//     position: absolute;
+//     right: 10px;
+//     top: 70px;
+//     width: 130px;
+//     border-radius: 10px;
+//     padding-top: 20px;
+//     height: 40px;
+//     text-align: center;
+//     color: white;
+//     font-family: $mainfont;
+//     background-color: rgb(133, 13, 133);
+//     &:hover {
+//         transform: translateY(-10px);
+//         box-shadow: 10px 10px 0px #DFDFDF;
+//     }
+// }
+.game_over{
+    display:none;
+    background-color: blanchedalmond;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 120vh;
+    width: 100%;
+    z-index: 2;
+    lottie-player{
+        overflow: hidden;
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        height: 120vh;
+        width: 100%;
+    }
+    .text {
+        font-size: 40px;
+        font-family: $mainfont;
+        overflow: hidden;
+        position: fixed;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+}
+.success{
+    // display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #38c172;
+    background-image: url('/scene(3).png');
+    background-position: center;
+    background-size: auto;
+    lottie-player{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        overflow: hidden;
+    }
+}
+.congreast{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    font-family: $mainfont;
+    text-transform: capitalize;
+}
+@media (max-width: 1050px) {
+
+
+    .section {
+        display: flex;
+        flex-direction: column;
+
+        .but {
+            margin-top: 40px;
+        }
+    }
+
+    .buttons {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hangman {
+        margin-left: auto;
+        margin-right: auto;
+        // background-color: $textcolor;
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column;
+    }
+}
+.display{
+    display: block;
+}
+.answer{
+    font-size: 30px;
+    font-family: $mainfont;
+}
